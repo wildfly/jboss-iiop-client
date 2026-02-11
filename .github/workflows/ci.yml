@@ -35,7 +35,7 @@ jobs:
           java-version: ${{ matrix.java }}
       - name: Build and Test on ${{ matrix.java }}
         run:  bash ${GITHUB_WORKSPACE}/.github/workflows/test.sh
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: surefire-${{ matrix.jdk-distribution }}-${{ matrix.jdk-version }}-${{ matrix.os }}
